@@ -1,0 +1,282 @@
+<!-- File: styles.css -->
+/* Save as: styles.css */
+:root{
+  --green-dark:#1b5e20;
+  --green-light:#8bc34a;
+  --accent-gradient: linear-gradient(90deg,#cddc39,#8bc34a,#66bb6a);
+  --bg:#ffffff;
+  --muted:#666;
+  --card-shadow: 0 6px 18px rgba(27,94,32,0.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{background:var(--bg);color:#111}
+.container{max-width:980px;margin:0 auto;padding:20px}
+.header{background:var(--green-dark);color:#fff;padding:22px;border-radius:14px;display:flex;align-items:center;justify-content:space-between}
+.header .left{display:flex;gap:14px;align-items:center}
+.avatar{width:48px;height:48px;border-radius:12px;background:#234d1a;display:flex;align-items:center;justify-content:center;font-weight:700}
+.header h1{margin:0;font-size:18px}
+.header p{margin:0;opacity:0.9}
+.icon-group{display:flex;gap:12px;align-items:center}
+.icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+
+.metrics{display:flex;gap:14px;margin-top:18px}
+.metric{flex:1;background:#fff;padding:14px;border-radius:12px;box-shadow:var(--card-shadow);min-width:0}
+.metric h3{margin:0;font-size:13px;color:var(--muted)}
+.metric .value{font-weight:800;color:var(--green-dark);font-size:20px;margin:8px 0}
+.progress{height:8px;background:#eee;border-radius:8px;overflow:hidden}
+.progress > i{display:block;height:100%;background:var(--accent-gradient)}
+
+.cta-wrap{margin:20px 0}
+.gradient-btn{display:inline-block;padding:14px 22px;border-radius:12px;background:var(--accent-gradient);color:#063;box-shadow:0 8px 20px rgba(99,161,84,0.18);text-decoration:none;font-weight:700}
+
+.feed{margin-top:6px}
+.card{background:#fff;padding:12px;border-radius:12px;box-shadow:var(--card-shadow);margin-bottom:12px}
+.card h4{margin:0 0 6px 0}
+.card p{margin:0;color:var(--muted);font-size:14px}
+
+.tabbar{position:fixed;left:0;right:0;bottom:14px;display:flex;justify-content:space-around;max-width:980px;margin:0 auto;padding:10px 18px;background:rgba(255,255,255,0.98);border-radius:999px;box-shadow:0 8px 30px rgba(15,23,12,0.06)}
+.tabbar a{display:flex;flex-direction:column;align-items:center;font-size:12px;color:var(--muted);text-decoration:none}
+.tabbar a.active{color:var(--green-dark);font-weight:700}
+
+/* Responsive */
+@media (max-width:720px){
+  .metrics{flex-direction:row;gap:10px}
+  .metric{min-width:30%}
+  .container{padding:14px}
+}
+
+/* Utility */
+.kv{font-size:12px;color:var(--muted)}
+
+
+<!-- File: index.html -->
+<!-- Save as: index.html -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EcoCreate — Home</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="left">
+          <div class="avatar">E</div>
+          <div>
+            <h1>Olá, Filomeno!</h1>
+            <p>Bem-vindo ao EcoCreate</p>
+          </div>
+        </div>
+
+        <div class="icon-group">
+          <a class="icon" href="profile.html" title="Settings">⚙</a>
+          <a class="icon" href="#" title="Notificações">🔔</a>
+        </div>
+      </header>
+
+      <section class="metrics">
+        <article class="metric">
+          <h3>Pontos Eco</h3>
+          <div class="value">320</div>
+          <div class="progress"><i style="width:70%"></i></div>
+        </article>
+
+        <article class="metric">
+          <h3>Itens Reciclados</h3>
+          <div class="value">45</div>
+          <div class="progress"><i style="width:45%"></i></div>
+        </article>
+
+        <article class="metric">
+          <h3>CO₂ Reduzido</h3>
+          <div class="value">12 kg</div>
+          <div class="progress"><i style="width:30%"></i></div>
+        </article>
+      </section>
+
+      <div class="cta-wrap">
+        <a class="gradient-btn" href="recycle.html">Registrar Reciclagem</a>
+      </div>
+
+      <h2 style="margin:8px 0 12px 0">Ideias Criativas & Dicas de Bem-Estar</h2>
+
+      <section class="feed">
+        <article class="card">
+          <h4>DIY: Vaso com Garrafa PET</h4>
+          <p>Transforme uma garrafa PET em um vaso moderno — passo a passo simples.</p>
+        </article>
+
+        <article class="card">
+          <h4>Meditação de 5 Minutos</h4>
+          <p>Prática rápida para reduzir o stress e aumentar foco.</p>
+        </article>
+
+        <article class="card">
+          <h4>Arte com Materiais Recicláveis</h4>
+          <p>Ideias para criar peças decorativas com coisas que você tem em casa.</p>
+        </article>
+      </section>
+
+    </div>
+
+    <nav class="tabbar" role="navigation" aria-label="Barra de navegação">
+      <a href="index.html" class="active">🏠<span>Home</span></a>
+      <a href="recycle.html">♻<span>Reciclar</span></a>
+      <a href="create.html">🛠<span>Criar</span></a>
+      <a href="profile.html">👤<span>Perfil</span></a>
+    </nav>
+  </body>
+</html>
+
+
+<!-- File: recycle.html -->
+<!-- Save as: recycle.html -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EcoCreate — Reciclar</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="left">
+          <a href="index.html" style="color:#fff;text-decoration:none;margin-right:12px">←</a>
+          <div>
+            <h1>Reciclar</h1>
+            <p>Registre materiais e acompanhe pontos</p>
+          </div>
+        </div>
+        <div class="icon-group">
+          <a class="icon" href="profile.html">⚙</a>
+        </div>
+      </header>
+
+      <main style="margin-top:18px">
+        <div class="card">
+          <h4>Registrar Nova Reciclagem</h4>
+          <p>Formulário fictício para testes: quantidade, tipo de material, foto, localização.</p>
+          <div style="margin-top:10px"><a class="gradient-btn" href="#">Iniciar Registro</a></div>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h4>Histórico</h4>
+          <p>Últimos registros e pontos ganhos.</p>
+        </div>
+      </main>
+    </div>
+
+    <nav class="tabbar" role="navigation" aria-label="Barra de navegação">
+      <a href="index.html">🏠<span>Home</span></a>
+      <a href="recycle.html" class="active">♻<span>Reciclar</span></a>
+      <a href="create.html">🛠<span>Criar</span></a>
+      <a href="profile.html">👤<span>Perfil</span></a>
+    </nav>
+  </body>
+</html>
+
+
+<!-- File: create.html -->
+<!-- Save as: create.html -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EcoCreate — Criar</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="left">
+          <a href="index.html" style="color:#fff;text-decoration:none;margin-right:12px">←</a>
+          <div>
+            <h1>Criar</h1>
+            <p>Projetos e atividades criativas</p>
+          </div>
+        </div>
+        <div class="icon-group">
+          <a class="icon" href="profile.html">⚙</a>
+        </div>
+      </header>
+
+      <main style="margin-top:18px">
+        <div class="card">
+          <h4>Ideias DIY</h4>
+          <p>Selecione um projeto para ver instruções e materiais necessários.</p>
+        </div>
+
+        <div class="card">
+          <h4>Desafios da Semana</h4>
+          <p>Complete desafios e ganhe pontos Eco.</p>
+        </div>
+      </main>
+    </div>
+
+    <nav class="tabbar" role="navigation" aria-label="Barra de navegação">
+      <a href="index.html">🏠<span>Home</span></a>
+      <a href="recycle.html">♻<span>Reciclar</span></a>
+      <a href="create.html" class="active">🛠<span>Criar</span></a>
+      <a href="profile.html">👤<span>Perfil</span></a>
+    </nav>
+  </body>
+</html>
+
+
+<!-- File: profile.html -->
+<!-- Save as: profile.html -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EcoCreate — Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="left">
+          <a href="index.html" style="color:#fff;text-decoration:none;margin-right:12px">←</a>
+          <div>
+            <h1>Perfil</h1>
+            <p>Configurações e informações pessoais</p>
+          </div>
+        </div>
+        <div class="icon-group">
+          <a class="icon" href="#">🔔</a>
+        </div>
+      </header>
+
+      <main style="margin-top:18px">
+        <div class="card">
+          <h4>Filomeno</h4>
+          <p class="kv">filomeno@example.com · Angola</p>
+        </div>
+
+        <div class="card">
+          <h4>Preferências</h4>
+          <p>Notificações · Segurança · Integrations</p>
+        </div>
+
+        <div class="card">
+          <h4>Sair</h4>
+          <p>Terminar sessão</p>
+        </div>
+      </main>
+    </div>
+
+    <nav class="tabbar" role="navigation" aria-label="Barra de navegação">
+      <a href="index.html">🏠<span>Home</span></a>
+      <a href="recycle.html">♻<span>Reciclar</span></a>
+      <a href="create.html">🛠<span>Criar</span></a>
+      <a href="profile.html" class="active">👤<span>Perfil</span></a>
+    </nav>
+  </body>
+</html>
